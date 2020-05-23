@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,700;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+	<link href="//dl.dropbox.com/s/vpi3f9s7nhpe7v7/honeybee.css" rel="stylesheet">
+
+	<title>
+	</title>
+</head>
+
+<body>
+	<table cellpadding="20">
+		<tr>
+			<td>
+				<div style="font-family: poppins; font-size: 20px; font-weight: 700; margin-bottom: 20px; text-align: center">
+					BLACK & WHITE VER.
+				</div>
+				<!--- BLACK AND WHITE START =-->
+
+
+				<div class="dh-1-bg">
+					<div class="dh-1-ly">
+						I am my mother's child
+
+						<div class="dh-1-ly-sub">
+							I'll love you 'til my breathing stops
+						</div>
+					</div>
+
+
+					<div class="dh-1-img"><img src="https://i.postimg.cc/76YhSCpn/sdjsois.png">
+					</div>
+
+
+					<div class="dh-1-mid">
+						<div class="dh-1-tag">
+							first last
+						</div>
+
+
+						<div class="dh-1-post-bg">
+							<div class="dh-1-post">
+								Lorem ipsum dolor sit amet, <b>consectetur adipiscing elit</b>. Quisque quam libero, eleifend id massa non, accumsan porttitor lorem. Etiam volutpat, arcu ac dapibus luctus, nunc massa interdum erat, sed molestie nunc arcu a mi. Praesent elementum placerat odio, non pharetra enim sagittis id. Sed nec ante eros. Mauris faucibus blandit sapien non viverra.<br>
+								<br>
+								Duis nec tellus eu urna hendrerit mattis sit amet vitae nulla. <i>Duis rhoncus vel libero</i> vel volutpat. Phasellus vel sodales nisl, a pulvinar nisi. Nunc non pharetra arcu. Mauris ac gravida ante. In semper enim sit amet velit mattis, et commodo nulla vestibulum.<br>
+								<br>
+								Morbi rhoncus tincidunt tortor quis commodo. Nam sed fringilla nulla. Nam tincidunt vel dui nec posuere. Fusce ullamcorper purus vitae augue luctus hendrerit. Etiam et risus laoreet, semper nulla a, efficitur arcu. Phasellus gravida ipsum eget luctus rutrum.
+							</div>
+						</div>
+					</div>
+
+
+					<div class="dh-1-notes">
+						<span class="th th-stars"></span> notes go here ayyyy
+					</div>
+				</div>
+				<!--- BLACK AND WHITE END =-->
+			</td>
+
+			<td>
+				<div style="font-family: poppins; font-size: 20px; font-weight: 700; margin-bottom: 20px; text-align: center">
+					COLOUR (USING VAR) VER.
+				</div>
+				<!--- COLOUR START =-->
+
+
+				<div class="dh-2-bg">
+					<div class="dh-2-ly">
+						I am my mother's child
+
+						<div class="dh-2-ly-sub">
+							I'll love you 'til my breathing stops
+						</div>
+					</div>
+
+
+					<div class="dh-2-img"><img src="https://i.postimg.cc/76YhSCpn/sdjsois.png">
+					</div>
+
+
+					<div class="dh-2-mid">
+						<div class="dh-2-tag">
+							first last
+						</div>
+
+
+						<div class="dh-2-post-bg">
+							<div class="dh-2-post">
+								Lorem ipsum dolor sit amet, <b>consectetur adipiscing elit</b>. Quisque quam libero, eleifend id massa non, accumsan porttitor lorem. Etiam volutpat, arcu ac dapibus luctus, nunc massa interdum erat, sed molestie nunc arcu a mi. Praesent elementum placerat odio, non pharetra enim sagittis id. Sed nec ante eros. Mauris faucibus blandit sapien non viverra.<br>
+								<br>
+								Duis nec tellus eu urna hendrerit mattis sit amet vitae nulla. <i>Duis rhoncus vel libero</i> vel volutpat. Phasellus vel sodales nisl, a pulvinar nisi. Nunc non pharetra arcu. Mauris ac gravida ante. In semper enim sit amet velit mattis, et commodo nulla vestibulum.<br>
+								<br>
+								Morbi rhoncus tincidunt tortor quis commodo. Nam sed fringilla nulla. Nam tincidunt vel dui nec posuere. Fusce ullamcorper purus vitae augue luctus hendrerit. Etiam et risus laoreet, semper nulla a, efficitur arcu. Phasellus gravida ipsum eget luctus rutrum.
+							</div>
+						</div>
+					</div>
+
+
+					<div class="dh-2-notes">
+						<span class="th th-stars"></span> notes go here ayyyy
+					</div>
+				</div>
+				<!--- COLOUR END =-->
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
+
+<style>
+/*** BLACK AND WHITE ***/
+
+body {
+	background-color: #f3f3f3;
+	margin: 50px;
+}
+
+.dh-1-bg {
+	background-color: #fff;
+	width: 400px;
+	padding: 50px;
+}
+
+.dh-1-ly {
+	line-height: 25px;
+	color: #222;
+	font-family: poppins;
+	font-size: 28px;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-align: center;
+	border-bottom: 1px solid #dedede;
+	padding-bottom: 20px;
+}
+
+.dh-1-ly-sub {
+	text-transform: lowercase;
+	font-family: share tech mono;
+	font-weight: 400;
+	font-size: 12px;
+}
+
+.dh-1-img img {
+	width: 400px;
+	height: 200px;
+	object-fit: cover;
+	border-bottom: 1px solid #dedede;
+	padding: 20px 0px;
+}
+
+.dh-1-mid {
+	position: relative;
+}
+
+.dh-1-tag {
+	width: 250px;
+	height: 28px;
+	line-height: 25px;
+	overflow: hidden;
+	text-align: right;
+	position: absolute;
+	top: 130px;
+	left: -75px;
+	font-family: poppins;
+	font-size: 25px;
+	font-weight: 700;
+	text-transform: uppercase;
+	transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+}
+
+.dh-1-post-bg {
+	border-left: 1px solid #dedede;
+	margin-left: 75px;
+	padding: 20px;
+	min-height: 250px;
+}
+
+.dh-1-post {
+	background-color: #f7f7f7;
+	font-family: poppins;
+	font-size: 10px;
+	padding: 25px;
+	color: #222;
+	text-align: justify;
+	border: 1px solid #dedede;
+	line-height: 17px;
+}
+
+.dh-1-post b {
+	font-size: 12px;
+}
+
+.dh-1-post i {
+	font-family: share tech mono;
+	font-size: 9px;
+}
+
+.dh-1-notes {
+	border-top: 1px solid #dedede;
+	padding-top: 15px;
+	font-family: share tech mono;
+	font-size: 10px;
+	line-height: 10px;
+}
+
+.dh-1-notes span {
+	padding: 0px 3px;
+}
+
+/*** COLOUR ***/
+
+:root {
+	--template-hex: #52638E
+}
+
+.dh-2-bg {
+	background-color: #fff;
+	width: 400px;
+	padding: 50px;
+}
+
+.dh-2-ly {
+	color: var(--template-hex);
+	line-height: 25px;
+	font-family: poppins;
+	font-size: 28px;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-align: center;
+	border-bottom: 1px solid #dedede;
+	padding-bottom: 20px;
+}
+
+.dh-2-ly-sub {
+	text-transform: lowercase;
+	font-family: share tech mono;
+	font-weight: 400;
+	font-size: 12px;
+}
+
+.dh-2-img img {
+	width: 400px;
+	height: 200px;
+	object-fit: cover;
+	border-bottom: 1px solid #dedede;
+	padding: 20px 0px;
+}
+
+.dh-2-mid {
+	position: relative
+}
+
+.dh-2-tag {
+	color: var(--template-hex);
+	width: 250px;
+	height: 28px;
+	line-height: 25px;
+	overflow: hidden;
+	text-align: right;
+	position: absolute;
+	top: 130px;
+	left: -75px;
+	font-family: poppins;
+	font-size: 25px;
+	font-weight: 700;
+	text-transform: uppercase;
+	transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+}
+
+.dh-2-post-bg {
+	border-left: 1px solid #dedede;
+	margin-left: 75px;
+	padding: 20px;
+	min-height: 250px;
+}
+
+.dh-2-post {
+	background-color: #f7f7f7;
+	font-family: poppins;
+	font-size: 10px;
+	padding: 25px;
+	color: #222;
+	text-align: justify;
+	border: 1px solid #dedede;
+	line-height: 17px;
+}
+
+.dh-2-post b {
+	font-size: 12px;
+	color: var(--template-hex);
+}
+
+.dh-2-post i {
+	font-family: share tech mono;
+	font-size: 9px;
+	color: var(--template-hex);
+}
+
+.dh-2-notes {
+	border-top: 1px solid #dedede;
+	padding-top: 15px;
+	font-family: share tech mono;
+	font-size: 10px;
+	line-height: 10px;
+}
+
+.dh-2-notes span {
+	padding: 0px 3px;
+	color: var(--template-hex);
+}
+</style>
