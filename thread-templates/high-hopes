@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=montserrat:700,700i|Cousine:400,400i|PT+Sans:400" rel="stylesheet">
+
+	<title>
+	</title>
+</head>
+
+<body>
+	<center>
+		<div class="hh-bg">
+			<img class="hh-large-img" src="https://i.postimg.cc/TY647W87/mOO.png">
+
+			<div class="hh-post-bg">
+				<table>
+					<tr>
+						<td class="hh-left">
+							<img class="hh-icon" src="https://i.postimg.cc/Wzgb2qSY/akdljaskldjadk.png">
+
+							<div class="hh-ly">
+								I belong to the stars and only the stars and no matter how much you try to dull the sun it will shine
+							</div>
+						</td>
+
+						<td>
+							<div class="hh-post">
+								Lorem ipsum dolor sit amet, <b>consectetur adipiscing elit</b>. Quisque quam libero, eleifend id massa non, accumsan porttitor lorem. Etiam volutpat, arcu ac dapibus luctus, nunc massa interdum erat, sed molestie nunc arcu a mi. Praesent elementum placerat odio, non pharetra enim sagittis id. Sed nec ante eros. Mauris faucibus blandit sapien non viverra.<br>
+								<br>
+								Duis nec tellus eu urna hendrerit mattis sit amet vitae nulla. <i>Duis rhoncus vel libero</i> vel volutpat. Phasellus vel sodales nisl, a pulvinar nisi. Nunc non pharetra arcu. Mauris ac gravida ante. In semper enim sit amet velit mattis, et commodo nulla vestibulum.<br>
+								<br>
+								Morbi rhoncus tincidunt tortor quis commodo. Nam sed fringilla nulla. Nam tincidunt vel dui nec posuere. Fusce ullamcorper purus vitae augue luctus hendrerit. Etiam et risus laoreet, semper nulla a, efficitur arcu. Phasellus gravida ipsum eget luctus rutrum.
+							</div>
+						</td>
+					</tr>
+				</table>
+
+
+				<div class="hh-bot">
+					<div class="hh-tag-bg">
+						<div class="hh-tag">
+							@ tagged
+
+							<div style="display: none;">
+								@[actual tag here]
+							</div>
+						</div>
+					</div>
+
+
+					<div class="hh-notes">
+						<span>NOTES</span> your notes can go here! wrie as little or as much as you want, this section will grow to make sure everything fits!
+					</div>
+				</div>
+			</div>
+
+
+			<div>
+			</div>
+		</div>
+	</center>
+</body>
+</html>
+<style>
+body {
+	background-color: #252525;
+	margin: 20px;
+}
+
+.hh-bg {
+	width: 450px;
+	padding: 20px;
+	border: 1px solid #fff;
+	background-color: rgba(255, 255, 255, .2);
+}
+
+.hh-large-img {
+	width: 450px;
+	height: 200px;
+	object-fit: cover;
+	margin-bottom: -25px;
+}
+
+.hh-post-bg {
+	background-color: #fff;
+	padding: 40px;
+}
+
+.hh-left {
+	border-right: 1px solid #dbdbdb;
+	padding: 10px 20px 10px 0px;
+	vertical-align: top;
+}
+
+.hh-icon {
+	width: 70px;
+	height: 70px;
+	object-fit: cover;
+	padding: 10px;
+	border: 1px solid #dbdbdb;
+	margin-bottom: 10px;
+}
+
+.hh-ly {
+	font-family: cousine;
+	font-size: 8px;
+	text-transform: uppercase;
+	color: #777;
+	width: 90px;
+	text-align: justify;
+	line-height: 11px;
+}
+
+.hh-post {
+	margin-left: 15px;
+	padding: 10px 0px;
+	font-family: pt sans;
+	font-size: 10px;
+	text-align: justify;
+	line-height: 160%;
+}
+
+.hh-post b {
+	color: #b31e5b;
+	font-family: montserrat;
+	font-size: 12px;
+}
+
+.hh-post i {
+	font-family: cousine;
+	color: #b31e5b;
+}
+
+.hh-bot {
+	border-top: 1px solid #dbdbdb;
+	margin-top: 15px
+}
+
+.hh-tag-bg {
+	text-align: right;
+	margin-top: -11px;
+}
+
+.hh-tag {
+	font-family: cousine;
+	text-transform: uppercase;
+	color: #777;
+	font-size: 9px;
+	background-color: #fff;
+	display: inline-block;
+	padding: 0px 3px 0px 10px;
+}
+
+.hh-notes {
+	font-family: pt sans;
+	font-size: 9px;
+	text-align: justify;
+	color: #777;
+	margin-top: 5px;
+	line-height: 10px;
+}
+
+.hh-notes span {
+	color: #b31e5b;
+	font-family: cousine;
+	letter-spacing: 1px;
+	padding-right: 5px;
+}
+</style>
