@@ -1,7 +1,24 @@
-
-<!DOCTYPE html><script>var __pbpa = true;</script><script>var translated_warning_string = 'Warning: Never enter your Tumblr password unless \u201chttps://www.tumblr.com/login\u201d\x0ais the address in your web browser.\x0a\x0aYou should also see a green \u201cTumblr, Inc.\u201d identification in the address bar.\x0a\x0aSpammers and other bad guys use fake forms to steal passwords.\x0a\x0aTumblr will never ask you to log in from a user\u2019s blog.\x0a\x0aAre you absolutely sure you want to continue?';</script><script type="text/javascript" language="javascript" src="https://assets.tumblr.com/assets/scripts/pre_tumblelog.js?_v=66ac555bc5745ebe20abdae7cbc40704"></script><!doctype HTML><style>figure{margin:0}.tmblr-iframe{position:absolute}.tmblr-iframe.hide{display:none}.tmblr-iframe--amp-cta-button{visibility:hidden;position:fixed;bottom:10px;left:50%;transform:translateX(-50%);z-index:100}.tmblr-iframe--amp-cta-button.tmblr-iframe--loaded{visibility:visible;animation:iframe-app-cta-transition .2s ease-out}</style><link rel="stylesheet" media="screen" href="https://assets.tumblr.com/client/prod/standalone/blog-network-npf/index.build.css?_v=46a7a9e1e08f1b33790dea4bb521d1c8"><link rel="shortcut icon" href="https://31.media.tumblr.com/bfdac94fa90650797a1fdc26de002184/tumblr_inline_mzhj5hUMgn1r11hh6.jpg"><html><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# blog: http://ogp.me/ns/blog#"><meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS"><meta http-equiv="Content-Style-Type" content="text/css"><meta http-equiv="Content-Script-Type" content="text/javascript"><script type="text/javascript"><!--
-
+<!DOCTYPE html>
+<script>var __pbpa = true;</script><script>var translated_warning_string = 'Warning: Never enter your Tumblr password unless \u201chttps://www.tumblr.com/login\u201d\x0ais the address in your web browser.\x0a\x0aYou should also see a green \u201cTumblr, Inc.\u201d identification in the address bar.\x0a\x0aSpammers and other bad guys use fake forms to steal passwords.\x0a\x0aTumblr will never ask you to log in from a user\u2019s blog.\x0a\x0aAre you absolutely sure you want to continue?';</script><script type="text/javascript" language="javascript" src="http://assets.tumblr.com/assets/scripts/pre_tumblelog.js?_v=66ac555bc5745ebe20abdae7cbc40704"></script>
+<!doctype HTML>
+<link rel="shortcut icon" href="http://sv.tinypic.com?ref=qq68e9">
+ 
+<html>
+ 
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# blog: http://ogp.me/ns/blog#">
+ 
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+ 
+<meta http-equiv="Content-Style-Type" content="text/css">
+ 
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+ 
+<script type="text/javascript">
+ 
+<!--
+ 
 var namMember = new Array(
+ 
 "elyisum"
 "noctum",
 "lucidus",
@@ -21,586 +38,666 @@ var namMember = new Array(
 "vega",
 "altaris",
 "aeon"
-
+ 
+ 
 );
-
-
-
+ 
+ 
+ 
 //*********************************************************
-
-
-
+ 
+ 
+ 
 var lstMember = new Array();
-
+ 
 var parent = new Array();
-
+ 
 var equal = new Array();
-
+ 
 var rec = new Array();
-
+ 
 var cmp1,cmp2;
-
+ 
 var head1,head2;
-
+ 
 var nrec;
-
-
-
+ 
+ 
+ 
 var numQuestion;
-
+ 
 var totalSize;
-
+ 
 var finishSize;
-
+ 
 var finishFlag;
-
-
-
+ 
+ 
+ 
 //The initialization of the variable+++++++++++++++++++++++++++++++++++++++++++++
-
+ 
 function initList(){
-
+ 
 var n = 0;
-
+ 
 var mid;
-
+ 
 var i;
-
-
-
+ 
+ 
+ 
 //The sequence that you should sort
-
+ 
 lstMember[n] = new Array();
-
+ 
 for (i=0; i<namMember.length; i++) {
-
+ 
 lstMember[n][i] = i;
-
+ 
 }
-
+ 
 parent[n] = -1;
-
+ 
 totalSize = 0;
-
+ 
 n++;
-
-
-
+ 
+ 
+ 
 for (i=0; i<lstMember.length; i++) {
-
+ 
 //And element divides it in two/more than two
-
+ 
 //Increase divided sequence of last in first member
-
+ 
 if(lstMember[i].length>=2) {
-
+ 
 mid = Math.ceil(lstMember[i].length/2);
-
+ 
 lstMember[n] = new Array();
-
+ 
 lstMember[n] = lstMember[i].slice(0,mid);
-
+ 
 totalSize += lstMember[n].length;
-
+ 
 parent[n] = i;
-
+ 
 n++;
-
+ 
 lstMember[n] = new Array();
-
+ 
 lstMember[n] = lstMember[i].slice(mid,lstMember[i].length);
-
+ 
 totalSize += lstMember[n].length;
-
+ 
 parent[n] = i;
-
+ 
 n++;
-
+ 
 }
-
+ 
 }
-
-
-
+ 
+ 
+ 
 //Preserve this sequence
-
+ 
 for (i=0; i<namMember.length; i++) {
-
+ 
 rec[i] = 0;
-
+ 
 }
-
+ 
 nrec = 0;
-
-
-
+ 
+ 
+ 
 //List that keeps your results
-
+ 
 //Value of link initial
-
+ 
 // Value of link initial
-
+ 
 for (i=0; i<=namMember.length; i++) {
-
+ 
 equal[i] = -1;
-
+ 
 }
-
-
-
+ 
+ 
+ 
 cmp1 = lstMember.length-2;
-
+ 
 cmp2 = lstMember.length-1;
-
+ 
 head1 = 0;
-
+ 
 head2 = 0;
-
+ 
 numQuestion = 1;
-
+ 
 finishSize = 0;
-
+ 
 finishFlag = 0;
-
+ 
 }
-
-
-
+ 
+ 
+ 
 //&#12522;&#12473;&#12488;&#12398;&#12477;&#12540;&#12488;+++++++++++++++++++++++++++++++++++++++++++
-
+ 
 //flag&#65306;Don't know characters
-
+ 
 // -1&#65306;Chose the left
-
+ 
 // 0&#65306;Tie
-
+ 
 // 1&#65306;Chose the right
-
+ 
 function sortList(flag){
-
+ 
 var i;
-
+ 
 var str;
-
-
-
+ 
+ 
+ 
 //rec preservation
-
+ 
 if (flag<0) {
-
+ 
 rec[nrec] = lstMember[cmp1][head1];
-
+ 
 head1++;
-
+ 
 nrec++;
-
+ 
 finishSize++;
-
+ 
 while (equal[rec[nrec-1]]!=-1) {
-
+ 
 rec[nrec] = lstMember[cmp1][head1];
-
+ 
 head1++;
-
+ 
 nrec++;
-
+ 
 finishSize++;
-
+ 
 }
-
+ 
 }
-
+ 
 else if (flag>0) {
-
+ 
 rec[nrec] = lstMember[cmp2][head2];
-
+ 
 head2++;
-
+ 
 nrec++;
-
+ 
 finishSize++;
-
+ 
 while (equal[rec[nrec-1]]!=-1) {
-
+ 
 rec[nrec] = lstMember[cmp2][head2];
-
+ 
 head2++;
-
+ 
 nrec++;
-
+ 
 finishSize++;
-
+ 
 }
-
+ 
 }
-
+ 
 else {
-
+ 
 rec[nrec] = lstMember[cmp1][head1];
-
+ 
 head1++;
-
+ 
 nrec++;
-
+ 
 finishSize++;
-
+ 
 while (equal[rec[nrec-1]]!=-1) {
-
+ 
 rec[nrec] = lstMember[cmp1][head1];
-
+ 
 head1++;
-
+ 
 nrec++;
-
+ 
 finishSize++;
-
+ 
 }
-
+ 
 equal[rec[nrec-1]] = lstMember[cmp2][head2];
-
+ 
 rec[nrec] = lstMember[cmp2][head2];
-
+ 
 head2++;
-
+ 
 nrec++;
-
+ 
 finishSize++;
-
+ 
 while (equal[rec[nrec-1]]!=-1) {
-
+ 
 rec[nrec] = lstMember[cmp2][head2];
-
+ 
 head2++;
-
+ 
 nrec++;
-
+ 
 finishSize++;
-
+ 
 }
-
+ 
 }
-
-
-
+ 
+ 
+ 
 //Processing after finishing with one list
-
+ 
 if (head1<lstMember[cmp1].length && head2==lstMember[cmp2].length) {
-
+ 
 //List the remainder of cmp2 copies, list cmp1 copies when finished scanning
-
+ 
 while (head1<lstMember[cmp1].length){
-
+ 
 rec[nrec] = lstMember[cmp1][head1];
-
+ 
 head1++;
-
+ 
 nrec++;
-
+ 
 finishSize++;
-
+ 
 }
-
+ 
 }
-
+ 
 else if (head1==lstMember[cmp1].length && head2<lstMember[cmp2].length) {
-
+ 
 //List the remainder of cmp1 copies, list cmp2 copies when finished scanning
-
+ 
 while (head2<lstMember[cmp2].length){
-
+ 
 rec[nrec] = lstMember[cmp2][head2];
-
+ 
 head2++;
-
+ 
 nrec++;
-
+ 
 finishSize++;
-
+ 
 }
-
+ 
 }
-
-
-
+ 
+ 
+ 
 //When it arrives at the end of both lists
-
+ 
 //Update a pro list
-
+ 
 if (head1==lstMember[cmp1].length && head2==lstMember[cmp2].length) {
-
+ 
 for (i=0; i<lstMember[cmp1].length+lstMember[cmp2].length; i++) {
-
+ 
 lstMember[parent[cmp1]][i] = rec[i];
-
+ 
 }
-
+ 
 lstMember.pop();
-
+ 
 lstMember.pop();
-
+ 
 cmp1 = cmp1-2;
-
+ 
 cmp2 = cmp2-2;
-
+ 
 head1 = 0;
-
+ 
 head2 = 0;
-
-
-
+ 
+ 
+ 
 //Initialize the rec before performing the new comparison
-
+ 
 if (head1==0 && head2==0) {
-
+ 
 for (i=0; i<namMember.length; i++) {
-
+ 
 rec[i] = 0;
-
+ 
 }
-
+ 
 nrec = 0;
-
+ 
 }
-
+ 
 }
-
-
-
+ 
+ 
+ 
 if (cmp1<0) {
-
-str = "Battle #"+(numQuestion-1)+"<br>"+Math.floor(finishSize*100/totalSize)+"% sorted.";
-
+ 
+str = "battle #"+(numQuestion-1)+"<br>"+Math.floor(finishSize*100/totalSize)+"% sorted.";
+ 
 document.getElementById("battleNumber").innerHTML = str;
-
-
-
+ 
+ 
+ 
 showResult();
-
+ 
 finishFlag = 1;
-
+ 
 }
-
+ 
 else {
-
+ 
 showImage();
-
+ 
 }
-
+ 
 }
-
-
-
+ 
+ 
+ 
 //The results+++++++++++++++++++++++++++++++++++++++++++++++
-
+ 
 //&#38918;&#20301;=Rank/Grade/Position/Standing/Status
-
+ 
 //&#21517;&#21069;=Identification term
-
+ 
 function showResult() {
-
+ 
 var ranking = 1;
-
+ 
 var sameRank = 1;
-
+ 
 var str = "";
-
+ 
 var i;
-
-
-
+ 
+ 
+ 
 str += "<table style=\"width:200px; font-size:18px; line-height:120%; margin-left:auto; margin-right:auto; border:1px solid #000; border-collapse:collapse\" align=\"center\">";
-
-str += "<tr><td style=\"color:#ffffff; background-color:#000; text-align:center;\">Rank<\/td><td style=\"color:#ffffff; background-color:#000; text-align:center;\">Song<\/td><\/tr>";
-
-
-
+ 
+str += "<tr><td style=\"color:#ffffff; background-color:#e097d9; text-align:center;\">rank<\/td><td style=\"color:#ffffff; background-color:#e097d9; text-align:center;\">options<\/td><\/tr>";
+ 
+ 
+ 
 for (i=0; i<namMember.length; i++) {
-
+ 
 str += "<tr><td style=\"border:1px solid #000; text-align:center; padding-right:5px;\">"+ranking+"<\/td><td style=\"border:1px solid #000; padding-left:5px;\">"+namMember[lstMember[0][i]]+"<\/td><\/tr>";
-
+ 
 if (i<namMember.length-1) {
-
+ 
 if (equal[lstMember[0][i]]==lstMember[0][i+1]) {
-
+ 
 sameRank++;
-
+ 
 } else {
-
+ 
 ranking += sameRank;
-
+ 
 sameRank = 1;
-
+ 
 }
-
+ 
 }
-
+ 
 }
-
+ 
 str += "<\/table>";
-
-
-
+ 
+ 
+ 
 document.getElementById("resultField").innerHTML = str;
-
+ 
 }
-
-
-
+ 
+ 
+ 
 //Indicates two elements to compare+++++++++++++++++++++++++++++++++++
-
+ 
 function showImage() {
-
-var str0 = "Battle #"+numQuestion+"<br>"+Math.floor(finishSize*100/totalSize)+"% sorted.";
-
+ 
+var str0 = "battle #"+numQuestion+"<br>"+Math.floor(finishSize*100/totalSize)+"% sorted.";
+ 
 var str1 = ""+toNameFace(lstMember[cmp1][head1]);
-
+ 
 var str2 = ""+toNameFace(lstMember[cmp2][head2]);
-
-
-
+ 
+ 
+ 
 document.getElementById("battleNumber").innerHTML = str0;
-
+ 
 document.getElementById("leftField").innerHTML = str1;
-
+ 
 document.getElementById("rightField").innerHTML = str2;
-
-
-
+ 
+ 
+ 
 numQuestion++;
-
+ 
 }
-
-
-
+ 
+ 
+ 
 //Convert numeric value into a name (emoticon)+++++++++++++++++++++++++++++++
-
+ 
 function toNameFace(n){
-
+ 
 var str = namMember[n];
-
-
-
+ 
+ 
+ 
 /*
-
+ 
 str += '<br />';
-
+ 
 switch(n) {
-
+ 
 //case -1 Because it is a sample, delete it
-
+ 
 case -1: str+=""; break;
-
+ 
 }*/
-
+ 
 return str;
-
+ 
 }
-
-//--></script><style type="text/css"><!--
-
+ 
+//-->
+ 
+</script>
+ 
+<style type="text/css">
+ 
+<!--
+ 
 #mainTable{
-
+ 
 font-size: 19px;
-
-font-family: 'Josefin Slab', serif;
-
+ 
+font-family: 'Times New Roman', serif;
+ 
 text-align: center;
-
+ 
 vertical-align: middle;
-
+ 
 width: 410px;
-
+ 
 margin-left: auto;
-
+ 
 margin-right: auto;
-
+ 
 border-collapse: separate;
-
+ 
 border-spacing: 10px 5px;
-
+ 
 }
-
+ 
 #leftField{
-
+ 
 width: 120px;
-
+ 
 height: 150px;
-
+ 
 border: 1px solid #000;
-
+ 
 cursor: pointer;
-
+ 
 }
-
+ 
 #rightField{
-
+ 
 width: 120px;
-
+ 
 height: 150px;
-
+ 
 border: 1px solid #000;
-
+ 
 cursor: pointer;
-
+ 
 }
-
+ 
 .middleField{
-
+ 
 width: 120px;
-
+ 
 height: 70px;
-
+ 
 border: 1px solid #000;
-
+ 
 cursor: pointer;
-
+ 
 }
-
+ 
 a{
-
-color: #5b17ba;
-
+ 
+color: #e097d9;
+ 
 text-decoration : none;
-
+ 
 }
-
+ 
 a:hover{
-
-color: #945ce3;
-
+ 
+color: #8f8f8f;
+ 
 }
-
+ 
 body {
-
+ 
 width: 600px;
-
+ 
 margin: 0 auto;
-
-font-family: 'Josefin Slab', erif;
-
+ 
+font-family: 'Times New Roman', erif;
+ 
 }
-
---></style><!-- BEGIN TUMBLR FACEBOOK OPENGRAPH TAGS --><!-- If you'd like to specify your own Open Graph tags, define the og:url and og:title tags in your theme's HTML. --><!-- Read more: http://ogp.me/ --><meta property="fb:app_id" content="48119224995" /><meta property="og:site_name" content="" /><meta property="og:title" content="Not Found" /><meta property="og:url" content="" /><meta property="og:description" content="The URL you requested could not be found." /><meta property="og:determiner" content="a" /><meta property="og:type" content="tumblr-feed:entry" /><meta property="og:image" content="https://assets.tumblr.com/images/og/text_200.png" /><!-- END TUMBLR FACEBOOK OPENGRAPH TAGS --><!-- TWITTER TAGS --><meta charset="utf-8"><meta name="twitter:card" content="summary" /><meta name="twitter:description" content="The URL you requested could not be found." /><meta name="twitter:title" content="Not Found" /><meta name="twitter:url" content="" /><meta name="twitter:site" content="tumblr" /><meta name="twitter:app:name:iphone" content="Tumblr" /><meta name="twitter:app:name:ipad" content="Tumblr" /><meta name="twitter:app:name:googleplay" content="Tumblr" /><meta name="twitter:app:id:iphone" content="305343404" /><meta name="twitter:app:id:ipad" content="305343404" /><meta name="twitter:app:id:googleplay" content="com.tumblr" /><meta name="twitter:app:url:iphone" content="tumblr://x-callback-url/blog?blogName=roosterteethcs&amp;postID=&amp;referrer=twitter-cards" /><meta name="twitter:app:url:ipad" content="tumblr://x-callback-url/blog?blogName=roosterteethcs&amp;postID=&amp;referrer=twitter-cards" /><meta name="twitter:app:url:googleplay" content="tumblr://x-callback-url/blog?blogName=roosterteethcs&amp;postID=&amp;referrer=twitter-cards" /><script src="https://assets.tumblr.com/assets/scripts/tumblelog.js?_v=a9e2d0b0ade5958a1a2a936adf448061"></script><meta http-equiv="x-dns-prefetch-control" content="off"/><script src="https://assets.tumblr.com/assets/scripts/tumblelog_post_message_queue.js?_v=a8fadfa499d8cb7c3f8eefdf0b1adfdd"></script><link rel="stylesheet" type="text/css" href="https://assets.tumblr.com/fonts/calluna/stylesheet.css?v=3"><link rel="canonical" href="https://jesseepinkman.tumblr.com/tswiftsong" /></head><link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'><body text="#000000" bgcolor="#ffffff" link="#0099ff" vlink="#0099ff" alink="#0099ff"><p class="instructions"><center><img src=""><br /><br />
-
-
-I Like Both
-
-</td><td id="rightField" onclick="if(finishFlag==0) sortList(1);" rowspan="2"style="text-align:center;"></td></tr><tr><td class="middleField" onclick="if(finishFlag==0) sortList(0);"style="text-align:center;">
-
-No Opinion
-
-</td></tr></tbody></table><br><br><div id="resultField" style="text-align: center;"><br></div><script type="text/javascript"><!--
-
+ 
+-->
+ 
+</style>
+ 
+ 
+<!-- BEGIN TUMBLR FACEBOOK OPENGRAPH TAGS --><!-- If you'd like to specify your own Open Graph tags, define the og:url and og:title tags in your theme's HTML. --><!-- Read more: http://ogp.me/ --><meta property="fb:app_id" content="48119224995" /><meta property="og:site_name" content="" /><meta property="og:title" content="Not Found" /><meta property="og:url" content="" /><meta property="og:description" content="The URL you requested could not be found." /><meta property="og:determiner" content="a" /><meta property="og:type" content="tumblr-feed:entry" /><meta property="og:image" content="http://assets.tumblr.com/images/og/text_200.png" /><!-- END TUMBLR FACEBOOK OPENGRAPH TAGS -->
+ 
+ 
+<!-- TWITTER TAGS --><meta charset="utf-8"><meta name="twitter:card" content="summary" /><meta name="twitter:description" content="The URL you requested could not be found." /><meta name="twitter:title" content="Not Found" /><meta name="twitter:url" content="" /><meta name="twitter:site" content="tumblr" /><meta name="twitter:app:name:iphone" content="Tumblr" /><meta name="twitter:app:name:ipad" content="Tumblr" /><meta name="twitter:app:name:googleplay" content="Tumblr" /><meta name="twitter:app:id:iphone" content="305343404" /><meta name="twitter:app:id:ipad" content="305343404" /><meta name="twitter:app:id:googleplay" content="com.tumblr" /><meta name="twitter:app:url:iphone" content="tumblr://x-callback-url/blog?blogName=roosterteethcs&amp;postID=&amp;referrer=twitter-cards" /><meta name="twitter:app:url:ipad" content="tumblr://x-callback-url/blog?blogName=roosterteethcs&amp;postID=&amp;referrer=twitter-cards" /><meta name="twitter:app:url:googleplay" content="tumblr://x-callback-url/blog?blogName=roosterteethcs&amp;postID=&amp;referrer=twitter-cards" />
+ 
+<script src="http://assets.tumblr.com/assets/scripts/tumblelog.js?_v=a9e2d0b0ade5958a1a2a936adf448061"></script>
+<meta http-equiv="x-dns-prefetch-control" content="off"/>
+</head>
+<link href='http://fonts.googleapis.com/css?family=Josefin+Slab:600' rel='stylesheet' type='text/css'>
+ 
+<body text="#000000" bgcolor="#ffffff" link="#e097d9" vlink="#e097d9" alink="#79a2c9">
+ 
+ 
+ 
+<p class="instructions">
+<center><br /><br />
+<b>SORTER NAME</b><br /><br>pick who you like better in each battle to get an accurate list of your<br />favorite members from the group.<br />note: hitting 'no opinion' or 'I like both' frequently will negatively affect your results.<br /><br /></center>
+ 
+ 
+ 
+</p>
+ 
+ 
+ 
+<table id="mainTable" align="center">
+ 
+<tbody><tr>
+ 
+<td id="battleNumber" colspan="3" style="padding-bottom: 10px;" style="text-align:center;"><b>battle #1<br>0% sorted.</b></td>
+ 
+</tr>
+ 
+<tr>
+ 
+<td id="leftField" onclick="if(finishFlag==0) sortList(-1);" rowspan="2" style="text-align:center;"></td>
+ 
+<td class="middleField" onclick="if(finishFlag==0) sortList(0);" style="text-align:center;">
+ 
+I like both
+ 
+</td>
+ 
+<td id="rightField" onclick="if(finishFlag==0) sortList(1);" rowspan="2"style="text-align:center;"></td>
+ 
+</tr>
+ 
+<tr>
+ 
+<td class="middleField" onclick="if(finishFlag==0) sortList(0);"style="text-align:center;">
+ 
+no opinion
+ 
+</td>
+ 
+</tr>
+ 
+</tbody></table>
+ 
+<br><br>
+ 
+<div id="resultField" style="text-align: center;">
+ 
+<br>
+ 
+</div>
+ 
+<script type="text/javascript">
+ 
+<!--
+ 
 initList();
-
+ 
 showImage();
-
-//--></script><p class="other"><center><small><br />This page was made by <a href="http://jesseepinkman.tumblr.com/">jesseepinkman</a>.<br /><small><script language="JavaScript" src="<script language="JavaScript" src="<script language="JavaScript" src="http://freehostedscripts.net/ocount.php?site=ID2759801&name= "></script></script></center></small></p><!-- BEGIN TUMBLR CODE --><iframe id="tumblr_controls" width="1" height="1" frameborder="0" scrolling="no" style="position:absolute; z-index:2147483647; top:0; right:0; border:0; background-color:transparent; overflow:hidden; " src="https://assets.tumblr.com/assets/html/iframe/o.html?_v=dddebe193046ef922006b33d60687b05#src=http%3A%2F%2Froosterteethcs.tumblr.com%2Fask&amp;lang=en_US&amp;name=roosterteethcs&amp;avatar=http%3A%2F%2Fassets.tumblr.com%2Fimages%2Fdefault_avatar%2Fpyramid_open_64.png&amp;title=rt+character+sorter&amp;url=http%3A%2F%2Froosterteethcs.tumblr.com%2F&amp;page_slide=slide"></iframe><div id="teaser_iframe_container" style="display:none;"><iframe scrolling="no" frameborder="0" src="https://www.tumblr.com/assets/html/iframe/teaser.html?_v=0334cdd0135fa4ea13587cd37c2dcf98#src=http%3A%2F%2Froosterteethcs.tumblr.com%2Fask&amp;lang=en_US&amp;name=roosterteethcs&amp;avatar=http%3A%2F%2Fassets.tumblr.com%2Fimages%2Fdefault_avatar%2Fpyramid_open_64.png&amp;title=rt+character+sorter&amp;url=http%3A%2F%2Froosterteethcs.tumblr.com%2F&amp;page_slide=slide" id="teaser_iframe" width="1" height="1"></iframe></div><!--[if IE]><script type="text/javascript">document.getElementById('tumblr_controls').allowTransparency=true;</script><![endif]--><iframe onload="javascript:this.contentWindow.postMessage(['tick_google_analytics', '/ask?route=404_page'].join(';'), this.src.split('/analytics.html')[0]);  COMSCORE = true;this.contentWindow.postMessage('enable_comscore;' + window.location, this.src.split('/analytics.html')[0]);" src="https://assets.tumblr.com/analytics.html?9bbb9e7732da937858cd0531689c20b1" scrolling="no" width="1" height="1" frameborder="0" style="background-color:transparent; overflow:hidden; position:absolute; top:0; left:0 z-index:9999;" id="ga_target"></iframe><script type="text/javascript">
+ 
+//-->
+ 
+ 
+</script>
+<p class="other">
+<center><small><br /><br />used with permission.<br /><br/><a href="http://biasorter.tumblr.com/">created by biasorter</a>.
+</small></center></small>
+</p>
+ 
+<!-- BEGIN TUMBLR CODE --><iframe id="tumblr_controls" width="1" height="1" frameborder="0" scrolling="no" style="position:absolute; z-index:2147483647; top:0; right:0; border:0; background-color:transparent; overflow:hidden; " src="http://assets.tumblr.com/assets/html/iframe/o.html?_v=dddebe193046ef922006b33d60687b05#src=http%3A%2F%2Froosterteethcs.tumblr.com%2Fask&amp;lang=en_US&amp;name=roosterteethcs&amp;avatar=http%3A%2F%2Fassets.tumblr.com%2Fimages%2Fdefault_avatar%2Fpyramid_open_64.png&amp;title=rt+character+sorter&amp;url=http%3A%2F%2Froosterteethcs.tumblr.com%2F&amp;page_slide=slide"></iframe><div id="teaser_iframe_container" style="display:none;"><iframe scrolling="no" frameborder="0" src="http://www.tumblr.com/assets/html/iframe/teaser.html?_v=0334cdd0135fa4ea13587cd37c2dcf98#src=http%3A%2F%2Froosterteethcs.tumblr.com%2Fask&amp;lang=en_US&amp;name=roosterteethcs&amp;avatar=http%3A%2F%2Fassets.tumblr.com%2Fimages%2Fdefault_avatar%2Fpyramid_open_64.png&amp;title=rt+character+sorter&amp;url=http%3A%2F%2Froosterteethcs.tumblr.com%2F&amp;page_slide=slide" id="teaser_iframe" width="1" height="1"></iframe></div><!--[if IE]><script type="text/javascript">document.getElementById('tumblr_controls').allowTransparency=true;</script><![endif]--><iframe onload="javascript:this.contentWindow.postMessage(['tick_google_analytics', '/ask?route=404_page'].join(';'), this.src.split('/analytics.html')[0]);  COMSCORE = true;this.contentWindow.postMessage('enable_comscore;' + window.location, this.src.split('/analytics.html')[0]);" src="http://assets.tumblr.com/analytics.html?9bbb9e7732da937858cd0531689c20b1" scrolling="no" width="1" height="1" frameborder="0" style="background-color:transparent; overflow:hidden; position:absolute; top:0; left:0 z-index:9999;" id="ga_target"></iframe><script type="text/javascript">
       var _qevents = _qevents || [];
-
+ 
       (function() {
        var elem = document.createElement('script');
-
+ 
        elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
        elem.async = true;
        elem.type = "text/javascript";
@@ -609,7 +706,7 @@ showImage();
       })();
     </script><script type="text/javascript">
         _qevents.push( { qacct: 'p-19UtqE8ngoZbM' } );
-    </script><noscript><div style="display: none;"><img src="//pixel.quantserve.com/pixel/'p-19UtqE8ngoZbM'.gif" height="1" width="1" alt="Quantcast"/></div></noscript><script type="text/javascript">!function(s){s.src='https://www.tumblr.com/impixu?T=1389854658&J=eyJ0eXBlIjoidXJsIiwidXJsIjoiaHR0cDpcL1wvcm9vc3RlcnRlZXRoY3MudHVtYmxyLmNvbVwvYXNrIiwicmVxdHlwZSI6MCwicm91dGUiOiI0MDRfcGFnZSJ9&U=GJPMNFPHIN&K=745811f0e9615242e744b26218c2e56a6c6b184a1315e6c9e9e871a0c242e3ab&R=http%3A%2F%2Froosterteethcs.tumblr.com%2F'.replace(/&R=[^&$]*/,'').concat('&R='+escape(document.referrer)).slice(0,2000).replace(/%.?.?$/,'');}(new Image());</script><noscript><img style="position:absolute;z-index:-3334;top:0px;left:0px;visibility:hidden;" src="https://www.tumblr.com/impixu?T=1389854658&J=eyJ0eXBlIjoidXJsIiwidXJsIjoiaHR0cDpcL1wvcm9vc3RlcnRlZXRoY3MudHVtYmxyLmNvbVwvYXNrIiwicmVxdHlwZSI6MCwicm91dGUiOiI0MDRfcGFnZSIsIm5vc2NyaXB0IjoxfQ==&U=GJPMNFPHIN&K=c7a8ec33be24dcae3b08d0ffc26af0508ef65362a18101b8963123d054b7f79e&R=http%3A%2F%2Froosterteethcs.tumblr.com%2F"></noscript><script type="text/javascript" src="http://l.yimg.com/ss/rapid-3.9.js"></script><script>
+    </script><noscript><div style="display: none;"><img src="//pixel.quantserve.com/pixel/'p-19UtqE8ngoZbM'.gif" height="1" width="1" alt="Quantcast"/></div></noscript><script type="text/javascript">!function(s){s.src='http://www.tumblr.com/impixu?T=1389854658&J=eyJ0eXBlIjoidXJsIiwidXJsIjoiaHR0cDpcL1wvcm9vc3RlcnRlZXRoY3MudHVtYmxyLmNvbVwvYXNrIiwicmVxdHlwZSI6MCwicm91dGUiOiI0MDRfcGFnZSJ9&U=GJPMNFPHIN&K=745811f0e9615242e744b26218c2e56a6c6b184a1315e6c9e9e871a0c242e3ab&R=http%3A%2F%2Froosterteethcs.tumblr.com%2F'.replace(/&R=[^&$]*/,'').concat('&R='+escape(document.referrer)).slice(0,2000).replace(/%.?.?$/,'');}(new Image());</script><noscript><img style="position:absolute;z-index:-3334;top:0px;left:0px;visibility:hidden;" src="http://www.tumblr.com/impixu?T=1389854658&J=eyJ0eXBlIjoidXJsIiwidXJsIjoiaHR0cDpcL1wvcm9vc3RlcnRlZXRoY3MudHVtYmxyLmNvbVwvYXNrIiwicmVxdHlwZSI6MCwicm91dGUiOiI0MDRfcGFnZSIsIm5vc2NyaXB0IjoxfQ==&U=GJPMNFPHIN&K=c7a8ec33be24dcae3b08d0ffc26af0508ef65362a18101b8963123d054b7f79e&R=http%3A%2F%2Froosterteethcs.tumblr.com%2F"></noscript><script type="text/javascript" src="http://l.yimg.com/ss/rapid-3.9.js"></script><script>
                     (function(YAHOO) {
                         if (YAHOO) {
                             YAHOO.i13n.beacon_server = 'nol.yahoo.com';
@@ -617,42 +714,8 @@ showImage();
                             YAHOO.rapid = new YAHOO.i13n.Rapid({spaceid:1197719233, oo:1, client_only:1, yql_enabled:false, keys:keys});
                         }
                     })(window.YAHOO);
-                </script><!-- END TUMBLR CODE --><iframe scrolling="no" width="1" height="1" frameborder="0" style="background-color:transparent; overflow:hidden; position:absolute; top:0; left:0; z-index:9999;" id="ga_target"></iframe><script type="text/javascript">
-    (function(){
-        var analytics_frame = document.getElementById('ga_target');
-        var analytics_iframe_loaded;
-        var user_logged_in;
-        var blog_is_nsfw = 'No';
-
-        var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
-        var eventer = window[eventMethod];
-        var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
-        eventer(messageEvent,function(e) {
-            var message = (e.data && e.data.split) ? e.data.split(';') : '';
-            switch (message[0]) {
-                case 'analytics_iframe_loaded':
-                    analytics_iframe_loaded = true;
-                    postCSMessage();
-                    postGAMessage();
-                    break;
-                case 'user_logged_in':
-                    user_logged_in = message[1];
-                    postGAMessage();
-                    break;
-            }
-        }, false);
-
-        analytics_frame.src = "https://assets.tumblr.com/analytics.html?_v=9f5febfd57a8a649c598d888f2d9e062#" +
-                              "https://jesseepinkman.tumblr.com";
-        function postGAMessage() {
-            if (analytics_iframe_loaded && user_logged_in) {
-                var is_ajax = false;
-                analytics_frame.contentWindow.postMessage(['tick_google_analytics', is_ajax, user_logged_in, blog_is_nsfw, '/tswiftsong?route=custom_page'].join(';'), analytics_frame.src.split('/analytics.html')[0]);
-            }
-        }
-        function postCSMessage() {
-            COMSCORE = true;
-            analytics_frame.contentWindow.postMessage('enable_comscore;' + window.location, analytics_frame.src.split('/analytics.html')[0]);
-        }
-    })();
-</script><script type="text/javascript" nonce="yfGjDnUFPmt9xj3h9BHZta9k1iE">!function(s){s.src='https://px.srvcs.tumblr.com/impixu?T=1591136419&J=eyJ0eXBlIjoidXJsIiwidXJsIjoiaHR0cDovL2plc3NlZXBpbmttYW4udHVtYmxyLmNvbS90c3dpZnRzb25nIiwicmVxdHlwZSI6MCwicm91dGUiOiJjdXN0b21fcGFnZSJ9&U=NFMDIAIGPE&K=d86a5b0db8459d29b8ec2065a64171fd76a99a3d17bbf14a66af2353b7c72927&R=https%3A%2F%2Fwww.google.com%2F'.replace(/&R=[^&$]*/,'').concat('&R='+escape(document.referrer)).slice(0,2000).replace(/%.?.?$/,'');}(new Image());</script><noscript><img style="position:absolute;z-index:-3334;top:0px;left:0px;visibility:hidden;" src="https://px.srvcs.tumblr.com/impixu?T=1591136419&J=eyJ0eXBlIjoidXJsIiwidXJsIjoiaHR0cDovL2plc3NlZXBpbmttYW4udHVtYmxyLmNvbS90c3dpZnRzb25nIiwicmVxdHlwZSI6MCwicm91dGUiOiJjdXN0b21fcGFnZSIsIm5vc2NyaXB0IjoxfQ==&U=NFMDIAIGPE&K=12a0ed22d660d1a0415e63e137db4aedfd5ec0d4cafd289bec13dd1d39120597&R=https%3A%2F%2Fwww.google.com%2F"></noscript><noscript id="bootloader" data-bootstrap="{&quot;Components&quot;:{&quot;PostActivity&quot;:[],&quot;NotificationPoller&quot;:{&quot;messaging_keys&quot;:[],&quot;token&quot;:&quot;c86f8a500596474a7ef5034081f694bd&quot;,&quot;inbox_unread&quot;:0},&quot;DesktopDashboardLogo&quot;:{&quot;animations&quot;:[[&quot;https:\/\/assets.tumblr.com\/images\/logo\/hover-animations\/1.png?_v=161861acded461bb6e995593a3bae835&quot;,&quot;https:\/\/assets.tumblr.com\/images\/logo\/hover-animations\/1@2x.png?_v=496a774637302a598c851381d00009b0&quot;]]},&quot;TumblelogIframe&quot;:{&quot;unified&quot;:true,&quot;variant&quot;:null,&quot;isCompact&quot;:true,&quot;tumblelogBundleSrc&quot;:&quot;https:\/\/assets.tumblr.com\/client\/prod\/standalone\/tumblelog\/index.build.js?_v=24eeb9d26c778a65fed1ce82cfc68727&quot;,&quot;tumblelogName&quot;:&quot;jesseepinkman&quot;,&quot;isLoggedIn&quot;:false,&quot;isFriend&quot;:false,&quot;formKey&quot;:&quot;&quot;,&quot;canSubscribe&quot;:false,&quot;isSubscribed&quot;:false,&quot;tumblelogTitle&quot;:&quot;fool&#039;s gold&quot;,&quot;tumblelogAvatar&quot;:&quot;https:\/\/66.media.tumblr.com\/83117dd75ad075147b81e76bc4d751c5\/d48746374459c3ac-55\/s64x64u_c1\/091b21d2ade33d6c7c4229afaedb502130932f64.jpg&quot;,&quot;tumblelogHost&quot;:&quot;https:\/\/jesseepinkman.tumblr.com&quot;,&quot;isOptica&quot;:false,&quot;isCustomTheme&quot;:true,&quot;themeHeaderImage&quot;:&quot;https:\/\/66.media.tumblr.com\/24f5f9ef90a4d99355feb23d8c35df64\/d48746374459c3ac-dc\/s2048x3072_c0,588,100000,99216\/d7e04102e0aaba5ee8eb0057cbffd007ff8d13c2.png&quot;,&quot;themeBackgroundColor&quot;:&quot;#FFFFFF&quot;,&quot;themeTitleColor&quot;:&quot;#711459&quot;,&quot;themeAccentColor&quot;:&quot;#96006f&quot;,&quot;brag&quot;:true,&quot;adsEnabled&quot;:false,&quot;canShowAd&quot;:true,&quot;isPremium&quot;:false,&quot;showLrecAds&quot;:false,&quot;showStickyLrecBackfill&quot;:false,&quot;showGeminiAds&quot;:false,&quot;geminiSectionCodeDesktop&quot;:&quot;a10bca9c-0c5d-4a02-ab13-14ab8513d81d&quot;,&quot;geminiSectionCodeMobile&quot;:&quot;ced63809-b609-4aca-96a0-abc099acba6b&quot;,&quot;currentPageType&quot;:null,&quot;currentPage&quot;:false,&quot;searchQuery&quot;:&quot;&quot;,&quot;tag&quot;:&quot;&quot;,&quot;query&quot;:&quot;&quot;,&quot;chrono&quot;:false,&quot;postId&quot;:&quot;&quot;,&quot;src&quot;:&quot;https:\/\/jesseepinkman.tumblr.com\/tswiftsong&quot;,&quot;postUrl&quot;:&quot;&quot;,&quot;isBlocked&quot;:null,&quot;isAdmin&quot;:false,&quot;lookupButtonUrl&quot;:&quot;&quot;,&quot;showSpamButton&quot;:false,&quot;showRootPostButton&quot;:false,&quot;rootPostUrl&quot;:&quot;&quot;,&quot;showRadarPostButton&quot;:false,&quot;radarKeys&quot;:&quot;&quot;,&quot;isUniblocked&quot;:false,&quot;isNsfw&quot;:false,&quot;isAdult&quot;:false,&quot;isSpam&quot;:false,&quot;isPrimaryBlog&quot;:false,&quot;canEdit&quot;:false,&quot;canReblogSelf&quot;:false,&quot;showLikeButton&quot;:false,&quot;showReblogButton&quot;:false,&quot;reblogUrl&quot;:&quot;&quot;,&quot;showFanMailButton&quot;:false,&quot;showMessagingButton&quot;:false,&quot;loginCheckIframeSrc&quot;:&quot;https:\/\/assets.tumblr.com\/assets\/html\/iframe\/login_check.html?_v=3de94a184d600617102ddd5b48fb36e9&quot;,&quot;appInstallUrls&quot;:{&quot;android&quot;:&quot;https:\/\/play.google.com\/store\/apps\/details?id=com.tumblr\u0026referrer=utm_source%3Dtumblr%26utm_medium%3Diframe%26utm_campaign%3Dtumblr_new_iframe&quot;,&quot;ios&quot;:&quot;https:\/\/apps.apple.com\/app\/apple-store\/id305343404?pt=212308\u0026ct=tumblr_new_iframe\u0026mt=8&quot;},&quot;appOpenReferrer&quot;:&quot;tumblr_new_iframe&quot;,&quot;isShowSearch&quot;:true,&quot;supplyLogging&quot;:[],&quot;secondsSinceLastActivity&quot;:3599}},&quot;Flags&quot;:{&quot;features&quot;:&quot;eyJmaWx0ZXJfbnNmdyI6dHJ1ZSwibW9iaWxlX3dlYl9nYXRlIjp0cnVlLCJzYWZlX21vZGUiOnRydWUsInNhZmVfbW9kZV9lbmFibGVkIjp0cnVlLCJrZXljb21tYW5kX2F1dG9fcGFnaW5hdGUiOnRydWUsImxvZ2dlZF9vdXRfc2VhcmNoIjp0cnVlLCJrcmFrZW5fd2ViX2xvZ2dpbmdfbGlicmFyeSI6dHJ1ZSwibGl2ZXBob3Rvc193ZWIiOnRydWUsInVzZXJfdGFnX2ZpbHRlcmluZyI6dHJ1ZSwicHJvamVjdF94X2FwcGVhbCI6dHJ1ZSwicHJvamVjdF94X3dlYl9zZW5zaXRpdmVfY292ZXJzIjp0cnVlLCJzYWZlX21vZGVfb3duX3Bvc3QiOnRydWUsIm1vYmlsZV93ZWJfcGhvdG9zZXRzIjp0cnVlLCJoaWRlX2RlZmF1bHRfaGVhZGVyc19ibG9nX2NhcmRzIjp0cnVlLCJub3RpZmljYXRpb25fcmVwbHlfbGlua190b19ub3RlcyI6dHJ1ZSwidHlwaW5nX2luZGljYXRvcl93cml0ZSI6dHJ1ZSwiZ2Rwcl9ndWNlX2lzX3JlcXVpcmVkIjp0cnVlLCJ0dW1ibHJfdmlkZW9fc3BvbnNvcmVkX2RheSI6dHJ1ZSwiY2FwdGNoYTp1c2VfcmVjYXB0Y2hhMiI6dHJ1ZSwibGl0dGxlX3Npc3RlciI6dHJ1ZSwiZW5hYmxlX2pzX2Vycm9yc19sb2ciOnRydWUsImxvZ19sYWR5Ijp0cnVlLCJqc19wZXJmb3JtYW5jZV9sb2dnaW5nIjp0cnVlLCJyZWRwb3BfcG9zdF9mb3JtX21vYmlsZV9jcmVhdGUiOnRydWUsImRhcmxhX2FkX2ZlZWRiYWNrIjp0cnVlLCJzdGF0dXNfaW5kaWNhdG9yIjp0cnVlLCJjb252ZXJzYXRpb25hbF9ub3RpZmljYXRpb25zIjp0cnVlLCJkaXNhYmxlX3lhaG9vX2JfY29va2llIjp0cnVlLCJsaXZlcGhvdG9zIjp0cnVlfQ==&quot;},&quot;Context&quot;:{&quot;name&quot;:&quot;default&quot;,&quot;time&quot;:1591136419000,&quot;userinfo&quot;:{&quot;primary&quot;:&quot;&quot;,&quot;name&quot;:&quot;&quot;,&quot;channels&quot;:[]},&quot;hosts&quot;:{&quot;assets_host&quot;:&quot;https:\/\/assets.tumblr.com&quot;,&quot;secure_assets_host&quot;:&quot;https:\/\/assets.tumblr.com&quot;,&quot;www_host&quot;:&quot;https:\/\/www.tumblr.com&quot;,&quot;secure_www_host&quot;:&quot;https:\/\/www.tumblr.com&quot;,&quot;embed_host&quot;:&quot;https:\/\/embed.tumblr.com&quot;,&quot;safe_host&quot;:&quot;https:\/\/safe.txmblr.com&quot;,&quot;platform_host&quot;:&quot;https:\/\/platform.tumblr.com&quot;},&quot;language&quot;:&quot;en_US&quot;,&quot;language_simple&quot;:&quot;en&quot;,&quot;assets&quot;:&quot;https:\/\/assets.tumblr.com\/client\/prod\/&quot;},&quot;Translations&quot;:{&quot;%1$sReport %2$s&#039;s post?%3$sIf it violates our community guidelines, we&#039;ll remove it.%4$s&quot;:&quot;%1$sReport %2$s&#039;s reblog?%3$sIf it violates our community guidelines, we&#039;ll remove it.%4$s&quot;,&quot;%1$sReport %2$s&#039;s reply?%3$sIf it violates our community guidelines, we&#039;ll remove it.%4$s&quot;:&quot;%1$sReport %2$s&#039;s reblog?%3$sIf it violates our community guidelines, we&#039;ll remove it.%4$s&quot;}}"></noscript><script src="https://assets.tumblr.com/client/prod/standalone/tumblelog/index.build.js?_v=24eeb9d26c778a65fed1ce82cfc68727"></script></body></html>
+                </script><!-- END TUMBLR CODE -->
+ 
+</body>
+ 
+</html>
