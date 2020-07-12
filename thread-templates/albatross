@@ -1,0 +1,63 @@
+<head><link href="https://fonts.googleapis.com/css2?family=Cousine:ital@0;1&family=PT+Sans:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+</head>
+
+<table cellpadding="20"><tr><td>  <div style="font-family: poppins; font-size: 20px; font-weight: 700; margin-bottom: 20px; text-align: center">LIGHT VER.</div>
+
+  
+  
+<center><div class="albatross-1-bg">
+  <div class="albatross-1-left">
+  <img src="https://i.imgur.com/P1tYirG.png">
+    Soren Yoo
+
+  </div>
+    <div class="albatross-1-post">
+  
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut elementum turpis. Nam vitae lorem dui. <b>Sed non odio nec felis volutpat facilisis.</b> Suspendisse eleifend felis ut risus hendrerit pellentesque. Aliquam scelerisque commodo tellus, sed consectetur magna. <i>Aenean placerat eros elit</i>, eget hendrerit dui semper eget.
+  <BR><BR>
+Curabitur hendrerit pretium ligula, non rutrum est commodo a. Pellentesque eleifend, erat sed varius viverra, urna est tempus quam, eget faucibus ante diam in massa. <b>Sed vehicula quam purus, vitae laoreet enim egestas lobortis. Quisque sit amet viverra enim.</b> 
+    </div> </div></center>
+  
+  
+  </td><td>
+  
+  <div style="font-family: poppins; font-size: 20px; font-weight: 700; margin-bottom: 20px; text-align: center">DARK VER.</div>
+
+<center><div class="albatross-2-bg">
+  <div class="albatross-2-left">
+  <img src="https://i.imgur.com/Dq9iRbx.png">
+    Soren Yoo
+
+  </div>
+    <div class="albatross-2-post">
+  
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut elementum turpis. Nam vitae lorem dui. <b>Sed non odio nec felis volutpat facilisis.</b> Suspendisse eleifend felis ut risus hendrerit pellentesque. Aliquam scelerisque commodo tellus, sed consectetur magna. <i>Aenean placerat eros elit</i>, eget hendrerit dui semper eget.
+  <BR><BR>
+Curabitur hendrerit pretium ligula, non rutrum est commodo a. Pellentesque eleifend, erat sed varius viverra, urna est tempus quam, eget faucibus ante diam in massa. <b>Sed vehicula quam purus, vitae laoreet enim egestas lobortis. Quisque sit amet viverra enim.</b> 
+    </div>
+
+
+
+  
+  </div></center>
+
+  </td></tr></table>
+  
+  
+  
+  <style>
+  body {background-color: #151515; color: #eee;}
+
+.albatross-1-bg {--accent-color: #E4CAB8;}
+.albatross-1-bg {background-color: #fff; width: 370px; padding: 50px; border: 1px solid #dbdbdb; margin: 25px; font-family: pt sans; font-size: 11px; color: #696969; text-align: justify; line-height: 150%; display: flex;}
+.albatross-1-left {margin-right: 15px; border-right: 1px solid #dbdbdb; padding-right: 15px; text-transform: uppercase; text-align: right; font-family: cousine; font-size: 9px;}
+.albatross-1-left img {width: 80px; height: 80px; object-fit: cover; border: solid 10px var( --accent-color); -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;}
+.albatross-1-post b {background-color: var( --accent-color); padding: 0px 3px;}
+.albatross-1-post i { font-family: cousine; color: var( --accent-color); font-size: 10px;}
+
+.albatross-2-bg {--accent-color: #d6a584;}
+.albatross-2-bg {background-color: #1D1D1D; width: 370px; padding: 50px; border: 1px solid #2d2d2d; margin: 25px; font-family: pt sans; font-size: 11px; color: #eee; text-align: justify; line-height: 150%; display: flex;}
+.albatross-2-left {margin-right: 15px; border-right: 1px solid #2d2d2d; padding-right: 15px; text-transform: uppercase; text-align: right; font-family: cousine; font-size: 9px;}
+.albatross-2-left img {width: 80px; height: 80px; object-fit: cover; border: solid 10px var( --accent-color); -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px;}
+.albatross-2-post b {background-color: var( --accent-color); padding: 0px 3px;}
+.albatross-2-post i { font-family: cousine; color: var( --accent-color); font-size: 10px;}</style>
